@@ -1,99 +1,63 @@
-import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QLineEdit, QWidget
-from PyQt5 import uic
-
-class Pencere(QMainWindow):
-    def __init__(self):
-        super(Pencere, self).__init__()                                                    
-        uic.loadUi('pizza.ui', self) 
-
-        self.klasik_pizza.stateChanged.connect(self.klasik)
-        self.turk_pizza.stateChanged.connect(self.turk)
-        self.margarita_pizza.stateChanged.connect(self.margarita)
-        self.sade_pizza.stateChanged.connect(self.sade)
-        self.zeytin.stateChanged.connect(self.zeytin_fiyat)
-        self.mantar.stateChanged.connect(self.mantar_fiyat)
-        self.keci_peynir.stateChanged.connect(self.keci_peynir_fiyat)
-        self.et.stateChanged.connect(self.et_fiyat)
-        self.sogan.stateChanged.connect(self.sogan_fiyat)
-        self.misir.stateChanged.connect(self.misir_fiyat)
-        self.toolButton.clicked.connect(self.get_description)
-        
-
-    def klasik(self):
-        if self.klasik_pizza.isChecked():
-            self.toplam_fiyat.setText(str(int(self.toplam_fiyat.text())+80))
-        else:
-            self.toplam_fiyat.setText(str(int(self.toplam_fiyat.text())-80))
-
-    def turk(self):
-        if self.turk_pizza.isChecked():
-            self.toplam_fiyat.setText(str(int(self.toplam_fiyat.text())+80))
-        else:
-            self.toplam_fiyat.setText(str(int(self.toplam_fiyat.text())-80))
-
-    def margarita(self):
-        if self.margarita_pizza.isChecked():
-            self.toplam_fiyat.setText(str(int(self.toplam_fiyat.text())+70))
-        else:
-            self.toplam_fiyat.setText(str(int(self.toplam_fiyat.text())-70))
-
-    def sade(self):
-        if self.sade_pizza.isChecked():
-            self.toplam_fiyat.setText(str(int(self.toplam_fiyat.text())+70))
-        else:
-            self.toplam_fiyat.setText(str(int(self.toplam_fiyat.text())-70))
-
-    def zeytin_fiyat(self):
-        if self.zeytin.isChecked():
-            self.toplam_fiyat.setText(str(int(self.toplam_fiyat.text())+10))
-        else:
-            self.toplam_fiyat.setText(str(int(self.toplam_fiyat.text())-10))
-
-    def mantar_fiyat(self):
-        if self.mantar.isChecked():
-            self.toplam_fiyat.setText(str(int(self.toplam_fiyat.text())+10))
-        else:
-            self.toplam_fiyat.setText(str(int(self.toplam_fiyat.text())-10))
-
-    def keci_peynir_fiyat(self):
-        if self.keci_peynir.isChecked():
-            self.toplam_fiyat.setText(str(int(self.toplam_fiyat.text())+10))
-        else:
-            self.toplam_fiyat.setText(str(int(self.toplam_fiyat.text())-10))
-
-    def et_fiyat(self):
-        if self.et.isChecked():
-            self.toplam_fiyat.setText(str(int(self.toplam_fiyat.text())+20))
-        else:
-            self.toplam_fiyat.setText(str(int(self.toplam_fiyat.text())-20))
-
-    def sogan_fiyat(self):
-        if self.sogan.isChecked():
-            self.toplam_fiyat.setText(str(int(self.toplam_fiyat.text())+10))
-        else:
-            self.toplam_fiyat.setText(str(int(self.toplam_fiyat.text())-10))
-
-    def misir_fiyat(self):
-        if self.misir.isChecked():
-            self.toplam_fiyat.setText(str(int(self.toplam_fiyat.text())+10))
-        else:
-            self.toplam_fiyat.setText(str(int(self.toplam_fiyat.text())-10))
-
+class pizza:
+    def __init__(self,fiyat,aciklama) -> None:
+        self.fiyat = fiyat
+        self.aciklama = aciklama
+    
     def get_description(self):
+        return self.aciklama
 
-        name = self.ad_soyad.text()
-        kart_id = self.kart_no.text()
-        kart_password = self.kart_parola.text()
-        
-        export = open("Orders_Databases.csv","a")
-        export.write(f"{name},{kart_id},{kart_password}")
-        export.write("\n")
-        export.close()        
+    def get_cost(self):
+        return self.fiyat
 
-        self.result_label.setText("Siparişiniz Başarıyla Alındı.")
+class KlasikPizza(pizza):
+    def __init__(self,fiyat,aciklama) -> None:
+        super().__init__(fiyat,aciklama)
+    
+class MargheritaPizza(pizza):
+    def __init__(self,fiyat,aciklama) -> None:
+        super().__init__(fiyat,aciklama)
 
-app = QApplication(sys.argv)
-pencere = Pencere()
-pencere.show()
-sys.exit(app.exec_())
+class TurkPizza(pizza):
+    def __init__(self,fiyat,aciklama) -> None:
+        super().__init__(fiyat,aciklama)
+
+class DominosPizza(pizza):
+    def __init__(self,fiyat,aciklama) -> None:
+        super().__init__(fiyat,aciklama)
+
+
+class Decorator(pizza):
+    def __init__(self,fiyat,aciklama) -> None:
+        self.fiyat = fiyat
+        self.aciklama = aciklama
+    
+    def get_description(self):
+        return self.aciklama
+
+    def get_cost(self):
+        return self.fiyat
+
+class Zeytin(Decorator):
+    def __init__(self,fiyat,aciklama) -> None:
+        super().__init__(fiyat,aciklama)
+    
+class Mantar(Decorator):
+    def __init__(self,fiyat,aciklama) -> None:
+        super().__init__(fiyat,aciklama)
+
+class KeciPeyniri(Decorator):
+    def __init__(self,fiyat,aciklama) -> None:
+        super().__init__(fiyat,aciklama)
+
+class Et(Decorator):
+    def __init__(self,fiyat,aciklama) -> None:
+        super().__init__(fiyat,aciklama)
+    
+class Sogan(Decorator):
+    def __init__(self,fiyat,aciklama) -> None:
+        super().__init__(fiyat,aciklama)
+
+class Misir(Decorator):
+    def __init__(self,fiyat,aciklama) -> None:
+        super().__init__(fiyat,aciklama)
+    
