@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QGridLayout, QWidget
+from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QLineEdit, QWidget
 from PyQt5 import uic
 
 class Pencere(QMainWindow):
@@ -80,10 +80,18 @@ class Pencere(QMainWindow):
         else:
             self.toplam_fiyat.setText(str(int(self.toplam_fiyat.text())-10))
 
+    def get_description(self):
 
-
+        name = self.ad_soyad.text()
+        kart_id = self.kart_no.text()
+        kart_password = self.kart_parola.text()
         
+        export = open("Orders_Databases.csv","a")
+        export.write(f"{name},{kart_id},{kart_password}")
+        export.write("\n")
+        export.close()        
 
+        self.result_label.setText("Siparişiniz Başarıyla Alındı.")
 
 app = QApplication(sys.argv)
 pencere = Pencere()
