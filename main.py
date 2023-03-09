@@ -117,7 +117,7 @@ class MainApp(QMainWindow , ui):
         orderFile.write("\n")
         orderFile.close()  
 
-        self.result_label.setText("Siparişiniz Başarıyla Alındı.")
+        self.result_label.setText("Siparişiniz Onaylandı.")
 
 def main():
     app = QApplication(sys.argv)
