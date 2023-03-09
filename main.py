@@ -50,20 +50,21 @@ class MainApp(QMainWindow , ui):
         # You can control the logging level
         logging.getLogger().setLevel(logging.DEBUG)
 
+        self.orderListDesc = {"pizza":"","sos":[]}
         self.orderList = {"pizza":"","sos":[]}
         self.totalPrice = 0
 
         self.pizzaDict = {
-            1:KlasikPizza(80,"sdsdsd"),
-            2:TurkPizza(80,""),
-            3:MargheritaPizza(70,""),
-            4:DominosPizza(70,""),
-            5:Zeytin(10,""),
-            6:Mantar(10,""),
-            7:KeciPeyniri(10,""),
-            8:Et(20,""),
-            9:Sogan(10,""),
-            10:Misir(10,""),
+            1:KlasikPizza(80,"Klasik Pizza"),
+            2:TurkPizza(80,"Türk Pizza"),
+            3:MargheritaPizza(70,"Margarita Pizza"),
+            4:DominosPizza(70,"Sade Pizza"),
+            5:Zeytin(10,"Zeytin"),
+            6:Mantar(10,"Mantar"),
+            7:KeciPeyniri(10,"Keçi Peyniri"),
+            8:Et(20,"Et"),
+            9:Sogan(10,"Soğan"),
+            10:Misir(10,"Mısır"),
         }
 
     def HandleButtons(self):
@@ -77,18 +78,22 @@ class MainApp(QMainWindow , ui):
         self.et.stateChanged.connect(lambda x: self.onChange(8))
         self.sogan.stateChanged.connect(lambda x: self.onChange(9))
         self.misir.stateChanged.connect(lambda x: self.onChange(10))
-        self.toolButton.clicked.connect(lambda x: self.onChange(11))
+
+        self.toolButton.clicked.connect(lambda x: self.write_csv())
 
     
     def onChange(self,sender):
         self.totalPrice = 0
         if sender in (1,2,3,4):
             self.orderList["pizza"] = self.pizzaDict[sender]
+            self.orderListDesc["pizza"] = self.pizzaDict[sender].get_description()
         else:
             if self.pizzaDict[sender] in self.orderList["sos"]:
                 self.orderList["sos"].remove(self.pizzaDict[sender])
+                self.orderListDesc["sos"].remove(self.pizzaDict[sender].get_description())
             else:
                 self.orderList["sos"].append(self.pizzaDict[sender])
+                self.orderListDesc["sos"].append(self.pizzaDict[sender].get_description())
             
         
         for i in self.orderList["sos"]:
@@ -98,19 +103,18 @@ class MainApp(QMainWindow , ui):
 
         logging.info(self.pizzaDict[sender].get_description())
     
-    def get_description(self):
+    def write_csv(self):
 
         name = self.ad_soyad.text()
         kart_id = self.kart_no.text()
         kart_password = self.kart_parola.text()
-        
-        orderFile = open("Orders_Database.csv","a")
+        tc_no = self.tcno.text()
 
-        orderWriter = csv.writer(orderFile, delimiter=',', quotechar='|')
-        export = open("Orders_Databases.csv","a")
-        export.write(f"{name},{kart_id},{kart_password}")
-        export.write("\n")
-        export.close()        
+        orders = (f"{name},{tc_no},{kart_id},{kart_password},{self.orderListDesc},{datetime.datetime.now()}")
+
+        orderFile = open("Orders_Database.csv","a")
+        orderFile.write(orders)
+        orderFile.close()  
 
         self.result_label.setText("Siparişiniz Başarıyla Alındı.")
 
