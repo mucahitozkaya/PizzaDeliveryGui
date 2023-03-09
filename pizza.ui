@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>830</width>
+    <width>966</width>
     <height>949</height>
    </rect>
   </property>
@@ -517,6 +517,55 @@ Domates</string>
       </item>
      </layout>
     </item>
+    <item row="4" column="0" rowspan="2">
+     <widget class="QLabel" name="pizza_type_5">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	background-color: #C0C0C0;
+	border-radius: 8px;
+	border: 1px solid #000000;
+}</string>
+      </property>
+      <property name="text">
+       <string>ÖDEME
+BİLGİLERİ</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="pizza_type_2">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	background-color: #C0C0C0;
+	border-radius: 8px;
+	border: 1px solid #000000;
+}</string>
+      </property>
+      <property name="text">
+       <string>SOS</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
     <item row="2" column="2" colspan="2">
      <layout class="QHBoxLayout" name="horizontalLayout_6">
       <item>
@@ -966,52 +1015,10 @@ Domates</string>
       </property>
      </widget>
     </item>
-    <item row="4" column="0" rowspan="2">
-     <widget class="QLabel" name="pizza_type_5">
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QLabel{
-	background-color: #C0C0C0;
-	border-radius: 8px;
-	border: 1px solid #000000;
-}</string>
-      </property>
-      <property name="text">
-       <string>ÖDEME
-BİLGİLERİ</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="pizza_type_2">
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QLabel{
-	background-color: #C0C0C0;
-	border-radius: 8px;
-	border: 1px solid #000000;
-}</string>
-      </property>
-      <property name="text">
-       <string>SOS</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
+    <item row="2" column="1">
+     <widget class="Line" name="line_4">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
       </property>
      </widget>
     </item>
@@ -1019,45 +1026,6 @@ BİLGİLERİ</string>
      <widget class="Line" name="line">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="3">
-     <widget class="QToolButton" name="toolButton">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="mouseTracking">
-       <bool>true</bool>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QToolButton{
-	background-color: #4a708b;
-	border-radius: 8px;
-	border: 1px solid #000000;
-}</string>
-      </property>
-      <property name="text">
-       <string>SİPARİŞ
-
-VER</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="Line" name="line_4">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
       </property>
      </widget>
     </item>
@@ -1099,6 +1067,37 @@ R
       </property>
      </widget>
     </item>
+    <item row="4" column="3">
+     <widget class="QToolButton" name="toolButton">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QToolButton{
+	background-color: #00FFCC;
+	border-radius: 8px;
+	border: 1px solid #000000;
+}</string>
+      </property>
+      <property name="text">
+       <string>SİPARİŞ
+VER</string>
+      </property>
+     </widget>
+    </item>
     <item row="5" column="3">
      <widget class="QLabel" name="result_label">
       <property name="font">
@@ -1121,73 +1120,24 @@ R
       </property>
      </widget>
     </item>
+    <item row="0" column="1">
+     <widget class="Line" name="line_3">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0" colspan="4">
+     <widget class="QTextEdit" name="log"/>
+    </item>
     <item row="4" column="2" rowspan="2">
-     <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="0">
-       <widget class="QLabel" name="pizza_type_3">
-        <property name="font">
-         <font>
-          <pointsize>12</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel{
-	background-color: #C0C0C0;
-	border-radius: 8px;
-	border: 1px solid #000000;
-}</string>
-        </property>
-        <property name="text">
-         <string>TOPLAM FİYAT</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="pizza_type_9">
-        <property name="font">
-         <font>
-          <pointsize>12</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel{
-	
-	border-radius: 8px;
-	border: 1px solid #000000;
-}</string>
-        </property>
-        <property name="text">
-         <string>KART NO</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QLabel" name="label_27">
-        <property name="font">
-         <font>
-          <pointsize>11</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>=</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
+     <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0,0,0,0,0" columnstretch="0,0,0">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetDefaultConstraint</enum>
+      </property>
+      <property name="horizontalSpacing">
+       <number>6</number>
+      </property>
       <item row="0" column="1">
        <widget class="QLabel" name="label_25">
         <property name="font">
@@ -1229,26 +1179,28 @@ R
         </property>
        </widget>
       </item>
-      <item row="1" column="2">
-       <widget class="QLineEdit" name="ad_soyad">
+      <item row="5" column="1">
+       <widget class="QLabel" name="label_27">
         <property name="font">
          <font>
-          <pointsize>10</pointsize>
+          <pointsize>11</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
          </font>
         </property>
-        <property name="styleSheet">
-         <string notr="true">QLineEdit{
-	border-radius: 8px;
-	border: 1px solid #000000;
-}</string>
+        <property name="text">
+         <string>=</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
+      <item row="2" column="0">
        <widget class="QLabel" name="pizza_type_6">
         <property name="font">
          <font>
-          <pointsize>12</pointsize>
+          <pointsize>11</pointsize>
           <weight>75</weight>
           <bold>true</bold>
          </font>
@@ -1268,8 +1220,26 @@ R
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
-       <widget class="QLabel" name="label_26">
+      <item row="6" column="2">
+       <widget class="QLineEdit" name="kart_parola">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit{
+	border-radius: 8px;
+	border: 1px solid #000000;
+}</string>
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QLabel" name="label_28">
         <property name="font">
          <font>
           <pointsize>11</pointsize>
@@ -1285,11 +1255,11 @@ R
         </property>
        </widget>
       </item>
-      <item row="3" column="0">
+      <item row="6" column="0">
        <widget class="QLabel" name="pizza_type_10">
         <property name="font">
          <font>
-          <pointsize>12</pointsize>
+          <pointsize>11</pointsize>
           <weight>75</weight>
           <bold>true</bold>
          </font>
@@ -1309,24 +1279,22 @@ R
         </property>
        </widget>
       </item>
-      <item row="3" column="1">
-       <widget class="QLabel" name="label_28">
+      <item row="2" column="2">
+       <widget class="QLineEdit" name="ad_soyad">
         <property name="font">
          <font>
-          <pointsize>11</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
+          <pointsize>10</pointsize>
          </font>
         </property>
-        <property name="text">
-         <string>=</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit{
+	border-radius: 8px;
+	border: 1px solid #000000;
+}</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="2">
+      <item row="5" column="2">
        <widget class="QLineEdit" name="kart_no">
         <property name="font">
          <font>
@@ -1342,7 +1310,7 @@ R
        </widget>
       </item>
       <item row="3" column="2">
-       <widget class="QLineEdit" name="kart_parola">
+       <widget class="QLineEdit" name="atcno">
         <property name="font">
          <font>
           <pointsize>10</pointsize>
@@ -1354,22 +1322,116 @@ R
 	border: 1px solid #000000;
 }</string>
         </property>
-        <property name="echoMode">
-         <enum>QLineEdit::Password</enum>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="pizza_type_9">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{
+	
+	border-radius: 8px;
+	border: 1px solid #000000;
+}</string>
+        </property>
+        <property name="text">
+         <string>KART NO</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_30">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{
+	
+	border-radius: 8px;
+	border: 1px solid #000000;
+}</string>
+        </property>
+        <property name="text">
+         <string>T.C. NO</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" rowspan="2">
+       <widget class="QLabel" name="pizza_type_3">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{
+	background-color: #C0C0C0;
+	border-radius: 8px;
+	border: 1px solid #000000;
+}</string>
+        </property>
+        <property name="text">
+         <string>TOPLAM FİYAT</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLabel" name="label_26">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>=</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLabel" name="label_31">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>=</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
      </layout>
-    </item>
-    <item row="0" column="1">
-     <widget class="Line" name="line_3">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="0" colspan="4">
-     <widget class="QTextEdit" name="log"/>
     </item>
    </layout>
   </widget>
@@ -1378,8 +1440,8 @@ R
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>830</width>
-     <height>26</height>
+     <width>966</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>
