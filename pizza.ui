@@ -1220,23 +1220,6 @@ VER</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="1">
-       <widget class="QLabel" name="label_26">
-        <property name="font">
-         <font>
-          <pointsize>11</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>=</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
       <item row="6" column="2">
        <widget class="QLineEdit" name="kart_parola">
         <property name="font">
@@ -1327,7 +1310,12 @@ VER</string>
        </widget>
       </item>
       <item row="3" column="2">
-       <widget class="QLineEdit" name="tcno">
+       <widget class="QLineEdit" name="atcno">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
         <property name="styleSheet">
          <string notr="true">QLineEdit{
 	border-radius: 8px;
@@ -1405,6 +1393,38 @@ VER</string>
         </property>
         <property name="text">
          <string>TOPLAM FİYAT</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLabel" name="label_26">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>=</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLabel" name="label_31">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>=</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>

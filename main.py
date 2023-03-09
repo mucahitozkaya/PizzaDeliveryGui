@@ -108,12 +108,13 @@ class MainApp(QMainWindow , ui):
         name = self.ad_soyad.text()
         kart_id = self.kart_no.text()
         kart_password = self.kart_parola.text()
-        tc_no = self.tcno.text()
+        tc_no = self.atcno.text()
 
         orders = (f"{name},{tc_no},{kart_id},{kart_password},{self.orderListDesc},{datetime.datetime.now()}")
 
         orderFile = open("Orders_Database.csv","a")
         orderFile.write(orders)
+        orderFile.write("\n")
         orderFile.close()  
 
         self.result_label.setText("Siparişiniz Başarıyla Alındı.")
@@ -126,4 +127,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
